@@ -36,6 +36,7 @@ PVRSAUCE=~/android/kernelcompile/omap_ua_sync/pvr-source/eurasiacon
 KERNELSOURCE=~/kernel_linos14
 WORKINGOUTDIR=~/android/kernelcompile/espresso-bin
 
+#import environtmen
 info "Letak Kernel source : $KERNELSOURCE"
 info "Letak PVR Source : $PVRSAUCE"
 info "directory kerja : $SAUCE"
