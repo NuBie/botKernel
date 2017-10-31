@@ -102,7 +102,7 @@ warn "Hapus PVR source"
 make clean -C $PVRSAUCE/build/linux2/omap4430_android
 warn "sukses dihapus"
 
-info "Properly strip the kernel modules for smaller size, implified as stm command inside build.env"
+info "oplas modules jadi sexy"
 cd $SAUCE/espresso-bin/modules
 stm
 
