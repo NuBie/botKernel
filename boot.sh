@@ -31,12 +31,13 @@ setbuildjobs() {
 	info "Set build jobs to $JOBS"
 }
 
+WAKTUMULAI=$(date +"%s")
+
 SAUCE=~/android/kernelcompile
 PVRSAUCE=~/android/kernelcompile/omap_ua_sync/pvr-source/eurasiacon
 KERNELSOURCE=~/kernel_linos14
 WORKINGOUTDIR=~/android/kernelcompile/espresso-bin
 
-#import environtmen
 info "Letak Kernel source : $KERNELSOURCE"
 info "Letak PVR Source : $PVRSAUCE"
 info "directory kerja : $SAUCE"
@@ -109,13 +110,20 @@ info "Woooow fuck.. modulmu sexy, Hot, Montok dan bikin Horny . . . :)"
 
 cd $WORKINGOUTDIR
 
-WAKTUSAIKI=$(date +"%d-%m-%y-(%X)-$RANDOM$RANDOM")
+WAKTUSAIKI=$(date +"%d-%m-%y-(%X)")
 
 zip -r Espresso_Kernel_Kopi_Luwak_$WAKTUSAIKI.zip META-INF modules tools anykernel.sh cemplug zImage
 
 	info "####################"
 	info "#       Done!      #"
 	info "####################"
+
+WAKTUSELESAI=$(date +"%s")
+ESTIMASIWAKTU=$(($WAKTUSELESAI - $WAKTUMULAI))
+
+#echo -e "${blink_red}"
+echo "Waktu Estimasi : $(($ESTIMASIWAKTU / 60)) menit dan $(($ESTIMASIWAKTU % 60)) detik."
+echo
 
 date
 echo "Generated Script by : $USER"
