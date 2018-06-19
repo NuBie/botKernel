@@ -126,5 +126,3 @@ echo "Waktu Estimasi : $(($ESTIMASIWAKTU / 60)) menit dan $(($ESTIMASIWAKTU % 60
 echo
 
 date
-echo "Generated Script by : $USER"
-
