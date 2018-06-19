@@ -125,7 +125,7 @@ echo -e ${LGR} "############### ZIP kernel sudah jadi ################${NC}"
 WAKTUSELESAI=$(date +"%s")
 ESTIMASIWAKTU=$(($WAKTUSELESAI - $WAKTUMULAI))
 
-echo "Waktu Estimasi : $(($ESTIMASIWAKTU / 60)) menit dan $(($ESTIMASIWAKTU % 60)) detik."
+echo "Waktu Estimasi Compile : $(($ESTIMASIWAKTU / 60)) menit dan $(($ESTIMASIWAKTU % 60)) detik."
 echo
 
 echo -e ${LGR} "#################################################"
