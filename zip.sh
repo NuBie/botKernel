@@ -2,8 +2,7 @@
 
 #blink_red='\033[05;31m'
 
-WORKINGOUTDIR=~/android/kernelcompile/espresso-bin
-cd $WORKINGOUTDIR
+
 WAKTUSAIKI=$(date +"%d-%m-%y-(%X)_$RANDOM")
 
 WAKTUMULAI=$(date +"%s")
