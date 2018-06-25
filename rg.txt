@@ -10,24 +10,19 @@ Example
 You need to generate 10 random numbers. How would you achieve this?
 
 Consider the following script:
-1
 
 Let’s execute it to see what we will get:
-2
 
 Generating Random Numbers within a Range
 To generate a random number in a specific range using the RANDOM variable, an intelligent trick is used. Consider we need to generate a random number that is less than an integer number Y. To do so, we use the following formula:
 R=$(($RANDOM%Y))
-1
-	
+
 R=$(($RANDOM%Y))
 
 If the range of possible numbers should include its upper limit Y, the divisor of the modulo operation should be Y+1.
 DIV=$((Y+1))
 R=$(($RANDOM%$DIV))
-1
-2
-	
+
 DIV=$((Y+1))
 R=$(($RANDOM%$DIV))
 
@@ -35,21 +30,16 @@ Now the generated number will be between 0 and Y, inclusively.
 If the generated number should be located between X and Y inclusively, where X is a non-zero integer, the formula becomes:
 DIFF=$((Y-X+1))
 R=$(($(($RANDOM%$DIFF))+X))
-1
-2
-	
+
 DIFF=$((Y-X+1))
 R=$(($(($RANDOM%$DIFF))+X))
 
 Example
 The following script will accept two integers as command-line arguments, and generate 5 random integers between them, inclusively.
-3
 
 Would this code achieve what we need?! Let’s see:
-4
 
 It worked as expected. Now, we need to explain things:
-5
 
     Line 6: checks the number of provided command-line arguments. If the number of arguments is not 2, a usage message is printed, and the script exits with exit code 1.
     Line 10: the lines from this until the end of the program are executed in case the user has provided the correct number of arguments (2). This line calculates the difference between the maximum and minimum range values, and adds 1 to include the maximum value.
@@ -66,8 +56,7 @@ Another way to generate random numbers in Linux shell is using the shuf command.
 
 Syntax
 shuf -i MIN-MAX -n COUNT
-1
-	
+
 shuf -i MIN-MAX -n COUNT
 
 Where:
@@ -77,20 +66,17 @@ COUNT is the number of lines (random numbers) to display.
 Example
 The following command will generate 10 random integers from the range between 0 and 1000
 shuf -i 0-1000 -n 10
-1
-	
+
 shuf -i 0-1000 -n 10
 
 When executed, it should give an output like the following:
-6
 
 3) Using /dev/random
 The /dev/random special device file can be used to generate random numbers. The idea is simple: The /dev/random uses the noise collected from the device drivers and other sources to generate random data. The od (octal dump) command can extract a number of bytes and displays their decimal equivalent. That is it!!
 
 To get one random byte (0 – 255) and display it in decimal format:
 od -An -N1 -i /dev/random
-1
-	
+
 od -An -N1 -i /dev/random
 
 When put inside a loop that iterates 5 times:
@@ -104,17 +90,7 @@ When put inside a loop that iterates 5 times:
           52
          140
 [root@server01 ~]#
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-	
+
 [root@server01 ~]# for i in `seq 5`
 > do
 > od -An -N1 -i /dev/random
@@ -130,9 +106,6 @@ Similarly, to get 2 bytes (0 – 65535):
 [root@server01 ~]# od -An -N2 -i /dev/random
        41732
 [root@server01 ~]#
-1
-2
-3
 	
 [root@server01 ~]# od -An -N2 -i /dev/random
        41732
@@ -140,7 +113,7 @@ Similarly, to get 2 bytes (0 – 65535):
 
 To get a larger number, increase the number of bytes to convert (the number following the –N option)
 
-* * * * * *
+==================================
 
 Summary
 
